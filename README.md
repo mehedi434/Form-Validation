@@ -3,6 +3,6 @@
 This is a realtime form validation script. 
 
 ## Language
-*Html
-*Css
-*Javascript
+* Html
+* Css
+* Javascript
