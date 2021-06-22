@@ -1,0 +1,193 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main Container */
+.container {
+    width: 950px;
+    float: left;
+    margin: 10px 0px 0px 100px;
+}
+
+/* Container1 - Form Section */
+form#form {
+    background-color: white;
+    width: 400px;
+    padding: 5px 20px;
+    box-shadow: 3px 3px 8px 0px #6e6e6e;
+    border-radius: 8px;
+    float: left;
+}
+
+/* container2 Information Section*/
+div.informations {
+    background-color: #323232;
+    margin-right: 45px;
+    float: right;
+    width: 350px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: #fff;
+    min-height: 150px;
+}
+
+/* container3 Rules Section */
+.container3 {
+    width: 390px;
+    float: left;
+    margin: 10px 0px 0px 45px;
+}
+.rules {
+    box-shadow: -3px 3px 8px 0px #c0c0c0;
+    background: #babbb933;
+    color: black;
+    padding: 5px 5px;
+    margin-top: 10px;
+}
+/* Container3 button */
+#rulesButton {
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 8px;
+    background-color: #323232;
+    color: #fff;
+    border: none;
+    margin-left: 75px;
+    margin-top: 10px;
+}
+
+/* Styles for Inside contents of container */
+div.informations h2 {
+    text-align: center;
+    text-decoration: underline;
+    line-height: 30px;
+}
+div.informations p {
+    font-size: 18px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+.rules .heading {
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(72, 72, 72);
+}
+.rules li {
+    color: rgb(72, 72, 72);
+}
+/*  */
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control p,
+.form-control.gender span,
+.form-control select {
+    color: rgb(56, 56, 56);
+}
+.form-control p.title {
+    float: left;
+    display: inline;
+}
+.form-control p.title2 {
+    margin-left: 10px;
+    font-size: 14px;
+    float: left;
+    margin-top: 18px;
+    color: rgb(91 91 91);
+}
+.form-control option {
+    color: black;
+}
+
+.form-control.agree,
+.form-control:last-child {
+    margin-bottom: 5px;
+}
+
+.form-control small {
+    visibility: hidden;
+    display: block;
+    color: rgb(255, 26, 0);
+}
+
+.form-control input,
+.form-control select,
+.form-control .submit {
+    font-size: 16px;
+    width: 390px;
+    padding: 8px;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 10px;
+}
+.form-control input:focus {
+    border: 1px solid orange;
+    outline: none;
+}
+
+.form-control.gender input,
+.form-control.agree input {
+    width: 15px;
+}
+
+.form-control.agree input {
+    float: left;
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+.form-control .submit {
+    background-color: #000084;
+    color: white;
+    font-size: 18px;
+}
+.form-control .submit:focus {
+    outline: none;
+    background-color: #ff2400;
+}
+
+/* For Error Messages */
+/* Jodi form-control e abar wrong nam e class add
+hoy taile egula call hbe */
+.form-control.wrong small {
+    visibility: visible;
+    margin: 5px 0px 0px 10px;
+}
+.form-control.wrong input {
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+.form-control.agree.wrong p {
+    margin-bottom: 5px;
+}
+.form-control.agree.wrong small {
+    margin-bottom: 20px;
+}
+
+/* For confirm */
+.valid input {
+    border: 1px solid blue;
+    outline: none;
+}
+.valid input:focus {
+    border: 1px solid blue;
+    outline: none;
+}
+
+/* After submitting finally */
+div.informations.allOk {
+    visibility: visible;
+}
+
+.rules.hidden {
+    visibility: hidden;
+}
+.rules.visible {
+    visibility: shown;
+}

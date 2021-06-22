@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container1">
+            <form id="form" action="">
+
+                <div class="form-control">
+                    <label for="fullName">
+                        <p class="title">Full Name</p>
+                        <p class="title2">[Only in English Format]</p>
+                    </label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your name">
+                    <small></small>
+                </div>
+
+                <div class="form-control gender">
+                    <p>Gender</p>
+                    <input type="radio" id="male" value='male' name="gender">
+                    <label for="male"><span>Male</span></label>
+
+                    <input type="radio" id="female" value='female' name="gender">
+                    <label for="female"><span>Female</span></label>
+                    <small></small>
+                </div>
+
+                <div class="form-control">
+                    <label for="email">
+                        <p>Email</p>
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <small></small>
+                </div>
+
+                <div class="form-control">
+                    <label for="phone">
+                        <p class='title'>Phone Number</p>
+                        <p class="title2">[Only Bangladeshi Phone numbers]</p>
+                    </label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    <small></small>
+                </div>
+
+                <div class="form-control">
+                    <label for="division">
+                        <p>Division</p>
+                    </label>
+                    <select name="division" id="division">
+                        <option value="" disabled hidden selected>Select your division</option>
+                        <option value="dhaka">Dhaka</option>
+                        <option value="chittagong">Chittagong</option>
+                        <option value="barishal">Barishal</option>
+                        <option value="mymensingh">Mymensingh</option>
+                        <option value="khulna">Khulna</option>
+                        <option value="rakshahi">Rajshahi</option>
+                        <option value="rangpur">Rangpur</option>
+                        <option value="sylhet">Sylhet</option>
+                    </select>
+                    <small></small>
+                </div>
+
+                <div class="form-control">
+                    <label for="password">
+                        <p class='title'>Password</p>
+                        <p class="title2">[With only English alphabets and English digits]</p>
+                    </label>
+                    <input type="text" id="password" name="password" placeholder="Enter your password">
+                    <small></small>
+                </div>
+
+                <div class="form-control">
+                    <label for="password2">
+                        <p>Confirm Password</p>
+                    </label>
+                    <input type="text" id="password2" name="password" placeholder="Re-type your password">
+                    <small></small>
+                </div>
+
+                <div class="form-control agree">
+                    <input type="checkbox" name="agree" id="agree">
+                    <label for="agree">
+                        <p>I agree with terms and conditions</p>
+                    </label>
+                    <small></small>
+                </div>
+
+                <div class="form-control submit">
+                    <button class="submit" type="submit" id="submit">Register</button>
+                </div>
+
+            </form>
+        </div>
+
+
+        <!-- This will show the information of user -->
+        <div class="container2 informations">
+            <h2>Your informations will preview here</h2>
+            <h3 class="P_title"></h3>
+            <p class="P_fixed"></p>
+            <br>
+            <p class="P_fullName"></p>
+            <p class="P_gender"></p>
+            <p class="P_email"></p>
+            <p class="P_phone"></p>
+            <p class="P_division"></p>
+            <p class="P_password"></p>
+        </div>
+        <button id="rulesButton">Show Rules</button>
+
+
+        <!-- If button pressed this will show -->
+    </div>
+    <div class="container3">
+        <div class="rules hidden">
+            <h1 class="heading" style="letter-spacing: 2px;color: rgb(48, 48, 48);">Realtime Form Validation</h1>
+            <hr>
+            <h1 class="heading" style="letter-spacing: 10px;">Rules</h1>
+            <h4 class="heading">Name</h4>
+            <p>
+            <ul>
+                <li>Use only English Character</li>
+                <li>No special symbols</li>
+                <li>No digits</li>
+            </ul>
+            </p>
+            <h4 class="heading">Email</h4>
+            <ul>
+                <li>Only valid acceptable</li>
+            </ul>
+            <h4 class="heading">Phone Number</h4>
+            <ul>
+                <li>Only Bangladeshi Phone number</li>
+                <li>+88 / 88 is not mandatory</li>
+            </ul>
+            <h4 class="heading">Password</h4>
+            <ul>
+                <li>Your Password should contain minimum at least One English Character, One English Digit and One
+                    Special
+                    Character</li>
+                <li>Minimum 7 characters acceptable</li>
+            </ul>
+            <h4 class="heading">Other</h4>
+            <ul>
+                <li> ** This is not Responsive page. Open this on your Desktop</li>
+                <li>You have to fill up full form</li>
+            </ul>
+
+
+        </div>
+    </div>
+
+</body>
+<script src="app.js"></script>
+
+</html>
