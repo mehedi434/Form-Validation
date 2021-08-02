@@ -88,9 +88,6 @@ form#form {
 }
 /* Rules Content End*/
 
-.form-control {
-    /* margin-bottom: 20px; */
-}
 .form-control p,
 .form-control.gender span,
 .form-control select {
@@ -181,3 +178,63 @@ form#form {
 }
 
 /* Responsive */
+@media only screen and (max-width: 460px) {
+    .menuBar {
+        width: 330px;
+    }
+    .rules,
+    .rules.visible {
+        width: 330px;
+    }
+    form#form {
+        width: 290px;
+    }
+    .form-control input,
+    .form-control select,
+    .form-control .submit {
+        width: 280px;
+        margin-left: 0px;
+    }
+
+    form p,
+    .form-control.gender span,
+    .form-control input,
+    .form-control select,
+    .form-control .submit {
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 370px) {
+    .menuBar {
+        width: 280px;
+    }
+    .rules,
+    .rules.visible {
+        width: 280px;
+        height: 330px;
+    }
+    .rules li {
+        font-size: 13px;
+        padding-right: 10px;
+    }
+    .rules .heading {
+        font-size: 15px;
+        font-weight: 100;
+    }
+    form#form {
+        width: 240px;
+    }
+    .form-control input,
+    .form-control select,
+    .form-control .submit {
+        width: 240px;
+        margin-left: 0px;
+    }
+    form p,
+    .form-control.gender span,
+    .form-control input,
+    .form-control select,
+    .form-control .submit {
+        font-size: 14px;
+    }
+}
