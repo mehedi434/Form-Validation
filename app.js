@@ -168,44 +168,44 @@ form.addEventListener("submit", function (e) {
             console.log(previewForm);
 
             //To preview the informations
-            let container2 = document.querySelector(".informations");
-            container2.classList.add("allOk");
+            let sub_container_2 = document.querySelector(".informations");
+            sub_container_2.classList.add("allOk");
 
             Object.assign(document.querySelector("form#form").style, {
                 float: "left",
             });
 
-            container2.querySelector(
+            sub_container_2.querySelector(
                 ".P_title"
-            ).innerHTML = `Hi ${fullName.value}`;
+            ).innerHTML = `Hi ${fullName.value},`;
 
-            container2.querySelector(
+            sub_container_2.querySelector(
                 ".P_fixed"
-            ).innerHTML = `Your registration has been successfully completed`;
+            ).innerHTML = `Your registration has been completed successfully.`;
 
-            container2.querySelector(
+            sub_container_2.querySelector(
                 ".P_fullName"
-            ).innerHTML = `Your Full Name : ${fullName.value}`;
+            ).innerHTML = `Full Name    : ${fullName.value}`;
 
-            container2.querySelector(
+            sub_container_2.querySelector(
                 ".P_gender"
-            ).innerHTML = `Gender : ${userGender}`;
+            ).innerHTML = `Gender       : ${userGender}`;
 
-            container2.querySelector(
+            sub_container_2.querySelector(
                 ".P_email"
-            ).innerHTML = `Email : ${email.value}`;
+            ).innerHTML = `Email        : ${email.value}`;
 
-            container2.querySelector(
+            sub_container_2.querySelector(
                 ".P_phone"
             ).innerHTML = `Phone Number : ${phone.value}`;
 
-            container2.querySelector(
+            sub_container_2.querySelector(
                 ".P_division"
-            ).innerHTML = `Division : ${division.value}`;
+            ).innerHTML = `Division     : ${division.value}`;
 
-            container2.querySelector(
+            sub_container_2.querySelector(
                 ".P_password"
-            ).innerHTML = `Password : ${password.value}`;
+            ).innerHTML = `Password     : ${password.value}`;
         } else {
             //if user click on submit button without typing or selecting anything on the filed
             let arr = [
@@ -353,22 +353,24 @@ function smallTag(input) {
 
 // Uncomment this after coding
 let toggle = 0;
-rulesButton.addEventListener("click", function (event) {
-    let rules = document.querySelector(".rules");
+let rules = document.querySelector(".rules");
+let arrowIcon = document.querySelector("#rulesButton i.fas");
+
+rulesButton.addEventListener("click", function () {
     toggle++;
     if (toggle % 2 != 0) {
         //This will show the rules
         rules.classList.remove("hidden");
         rules.classList.add("visible");
 
-        Object.assign(rulesButton.style, { background: "#573FB8" });
-        rulesButton.innerHTML = "Hide Rules";
-    } else {
+        arrowIcon.classList.add("reverse");
+    } else if (toggle % 2 == 0) {
         //This will hide the rules
         rules.classList.remove("visible");
         rules.classList.add("hidden");
 
-        Object.assign(rulesButton.style, { background: "#323232" });
-        rulesButton.innerHTML = "Show Rules";
+        arrowIcon.classList.remove("reverse");
     }
 });
+
+window.addEventListener("click", function (event) {});

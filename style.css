@@ -2,86 +2,95 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Main Container */
-.container {
-    width: 950px;
-    float: left;
-    margin: 10px 0px 0px 100px;
-}
-
-/* Container1 - Form Section */
 form#form {
     background-color: white;
     width: 400px;
-    padding: 5px 20px;
+    padding: 0px 20px 5px 20px;
     box-shadow: 3px 3px 8px 0px #6e6e6e;
-    border-radius: 8px;
-    float: left;
+    border-radius: 0px 0px 10px 10px;
+    margin: auto;
 }
 
-/* container2 Information Section*/
-div.informations {
-    background-color: #323232;
-    margin-right: 45px;
-    float: right;
-    width: 350px;
-    padding: 5px 20px;
-    border-radius: 10px;
-    color: #fff;
-    min-height: 150px;
+/* Rules */
+/* Rules Button */
+.menuBar {
+    width: 440px;
+    margin: auto;
 }
-
-/* container3 Rules Section */
-.container3 {
-    width: 390px;
-    float: left;
-    margin: 10px 0px 0px 45px;
-}
-.rules {
-    box-shadow: -3px 3px 8px 0px #c0c0c0;
-    background: #babbb933;
-    color: black;
-    padding: 5px 5px;
-    margin-top: 10px;
-}
-/* Container3 button */
 #rulesButton {
-    font-size: 20px;
-    padding: 10px 30px;
-    border-radius: 8px;
-    background-color: #323232;
-    color: #fff;
     border: none;
-    margin-left: 75px;
-    margin-top: 10px;
+    width: 100%;
+    padding: 4px 0px;
+    height: 30px;
+    margin: 0px;
+    cursor: pointer;
+    background-color: #e6edff;
+    border-radius: 10px 10px 0px 0px;
+}
+#rulesButton img {
+    height: 100%;
+}
+#rulesButton i.fas {
+    font-size: 12px;
+    color: #585858;
+    transform: rotate(180deg);
+    transition: all 0.5s ease-in-out;
+}
+#rulesButton i.fas.reverse {
+    color: #f44336;
+    transform: rotate(0deg);
+    transition: all 1s;
+}
+/* Rules Button  End*/
+
+/* Rules Content */
+.rules {
+    /* background-color: #efefef; */
+    background-color: #e6edff;
+    line-height: 18px;
+    border-top: 1px solid #9fb2e1;
+    /* padding: 0px 5px 0px 5px; */
+    position: absolute;
+    top: 39px;
+    width: 440px;
 }
 
-/* Styles for Inside contents of container */
-div.informations h2 {
-    text-align: center;
-    text-decoration: underline;
-    line-height: 30px;
+.rules.visible {
+    height: 310px;
+    overflow: hidden;
+
+    transition: all 0.5s ease-in-out;
+
+    border-bottom: 4px double #bababa;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
-div.informations p {
-    font-size: 18px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
+.rules.hidden {
+    height: 0px;
+    overflow: hidden;
+
+    transition: all 0.5s ease-in-out;
 }
 
 .rules .heading {
     text-align: center;
     text-decoration: underline;
-    color: rgb(72, 72, 72);
+    color: rgb(60, 60, 60);
+    margin: 0px auto 0px auto;
+}
+.rules ul {
+    margin-top: 0px;
+    margin-bottom: 15px;
 }
 .rules li {
-    color: rgb(72, 72, 72);
+    color: rgb(60, 60, 60);
+    font-size: 14px;
 }
-/*  */
+/* Rules Content End*/
 
 .form-control {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
-
 .form-control p,
 .form-control.gender span,
 .form-control select {
@@ -101,18 +110,15 @@ div.informations p {
 .form-control option {
     color: black;
 }
-
 .form-control.agree,
 .form-control:last-child {
     margin-bottom: 5px;
 }
-
 .form-control small {
     visibility: hidden;
     display: block;
     color: rgb(255, 26, 0);
 }
-
 .form-control input,
 .form-control select,
 .form-control .submit {
@@ -128,18 +134,15 @@ div.informations p {
     border: 1px solid orange;
     outline: none;
 }
-
 .form-control.gender input,
 .form-control.agree input {
     width: 15px;
 }
-
 .form-control.agree input {
     float: left;
     margin-top: 2px;
     margin-right: 10px;
 }
-
 .form-control .submit {
     background-color: #000084;
     color: white;
@@ -147,12 +150,19 @@ div.informations p {
 }
 .form-control .submit:focus {
     outline: none;
-    background-color: #ff2400;
+    background-color: #000084;
+    transition: all 0.4s;
+}
+.valid input {
+    border: 1px solid blue;
+    outline: none;
+}
+.valid input:focus {
+    border: 1px solid blue;
+    outline: none;
 }
 
 /* For Error Messages */
-/* Jodi form-control e abar wrong nam e class add
-hoy taile egula call hbe */
 .form-control.wrong small {
     visibility: visible;
     margin: 5px 0px 0px 10px;
@@ -168,26 +178,4 @@ hoy taile egula call hbe */
 }
 .form-control.agree.wrong small {
     margin-bottom: 20px;
-}
-
-/* For confirm */
-.valid input {
-    border: 1px solid blue;
-    outline: none;
-}
-.valid input:focus {
-    border: 1px solid blue;
-    outline: none;
-}
-
-/* After submitting finally */
-div.informations.allOk {
-    visibility: visible;
-}
-
-.rules.hidden {
-    visibility: hidden;
-}
-.rules.visible {
-    visibility: shown;
 }
