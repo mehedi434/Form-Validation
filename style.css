@@ -271,6 +271,13 @@ form#form {
 
 /* Responsive */
 @media only screen and (max-width: 460px) {
+    .user_info {
+        width: 330px;
+    }
+    div.informations.allOk {
+        width: 220px;
+        margin-left: 35px;
+    }
     .menuBar {
         width: 330px;
     }
@@ -297,6 +304,16 @@ form#form {
     }
 }
 @media only screen and (max-width: 370px) {
+    .user_info {
+        width: 280px;
+    }
+    div.informations.allOk {
+        width: 220px;
+        margin-left: 20px;
+    }
+    div.informations p {
+        font-size: 13px;
+    }
     .menuBar {
         width: 280px;
     }
