@@ -1,14 +1,66 @@
+/*
+This is my first project, thats why code structure is not good.
+*/
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-form#form {
-    background-color: white;
-    width: 400px;
-    padding: 0px 20px 5px 20px;
-    box-shadow: 3px 3px 8px 0px #6e6e6e;
-    border-radius: 0px 0px 10px 10px;
+/*  User Information Pop up Modal Box*/
+.user_info {
+    width: 440px;
     margin: auto;
+}
+div.informations {
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: auto;
+    position: absolute;
+    overflow: auto;
+    height: 0px;
+    top: -20px;
+    z-index: 1;
+}
+div.informations.allOk {
+    background-color: #f5f5f5;
+    width: 230px;
+    top: 120px;
+    margin-left: 85px;
+    height: auto;
+    transition: top 0.2s;
+    box-shadow: 0px 0px 10px 2px #535353;
+}
+button#cancel {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+button#cancel i {
+    float: right;
+    font-size: 21px;
+    color: #e91e63;
+    cursor: pointer;
+}
+div.informations h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 22px;
+    font-weight: 100;
+}
+div.informations p {
+    font-size: 15px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    line-height: 15px;
+}
+h3.P_title {
+    margin: 0;
+    font-weight: 100;
+}
+p.P_fixed {
+    margin: 10px 0px 30px 0px;
 }
 
 /* Rules */
@@ -41,20 +93,16 @@ form#form {
     transform: rotate(0deg);
     transition: all 1s;
 }
-/* Rules Button  End*/
 
 /* Rules Content */
 .rules {
-    /* background-color: #efefef; */
     background-color: #e6edff;
     line-height: 18px;
-    border-top: 1px solid #9fb2e1;
-    /* padding: 0px 5px 0px 5px; */
+    border-top: 1px solid #cccdd0;
     position: absolute;
     top: 39px;
     width: 440px;
 }
-
 .rules.visible {
     height: 310px;
     overflow: hidden;
@@ -71,7 +119,6 @@ form#form {
 
     transition: all 0.5s ease-in-out;
 }
-
 .rules .heading {
     text-align: center;
     text-decoration: underline;
@@ -88,6 +135,15 @@ form#form {
 }
 /* Rules Content End*/
 
+/* Form Section */
+form#form {
+    background-color: white;
+    width: 400px;
+    padding: 0px 20px 5px 20px;
+    box-shadow: 3px 3px 8px 0px #6e6e6e;
+    border-radius: 0px 0px 10px 10px;
+    margin: auto;
+}
 .form-control p,
 .form-control.gender span,
 .form-control select {
@@ -122,10 +178,20 @@ form#form {
     font-size: 16px;
     width: 390px;
     padding: 8px;
-    border: 1px solid rgb(197, 197, 197);
-    border-radius: 5px;
+    border: none;
     box-sizing: border-box;
     margin-left: 10px;
+    border: 1px solid rgb(197, 197, 197);
+}
+.form-control.gender input,
+.form-control.gender label,
+.form-control select,
+.form-control.agree p,
+.form-control .submit {
+    cursor: pointer;
+}
+.form-control select {
+    border: 1px solid rgb(197, 197, 197);
 }
 .form-control input:focus {
     border: 1px solid orange;
@@ -145,11 +211,16 @@ form#form {
     color: white;
     font-size: 18px;
 }
+.form-control .submit {
+    border-radius: 8px;
+}
 .form-control .submit:focus {
     outline: none;
     background-color: #000084;
     transition: all 0.4s;
 }
+
+/*If inputs are valid these will apply*/
 .valid input {
     border: 1px solid blue;
     outline: none;
@@ -169,12 +240,33 @@ form#form {
     border: 1px solid orange;
     border-radius: 5px;
 }
-
 .form-control.agree.wrong p {
     margin-bottom: 5px;
 }
 .form-control.agree.wrong small {
     margin-bottom: 20px;
+}
+
+/* If user info pop up Modal box opens, these will execute*/
+.rules.colorChange,
+#rulesButton.colorChange,
+#form.colorChange,
+#form.colorChange input,
+#form.colorChange select,
+#form.colorChange .submit {
+    background-color: gainsboro;
+    transition: all 0.5s;
+}
+.rules.colorChange {
+    border-top: 1px solid #bbbbbb;
+}
+#form.colorChange button.submit {
+    background-color: #18187d;
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+#form.colorChange .valid input {
+    border: 1px solid #a0a0a0;
 }
 
 /* Responsive */
