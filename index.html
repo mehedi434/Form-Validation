@@ -5,18 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Form Validation</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images_icons/form_icon.png" type="image/x-icon">
 </head>
 
 <body>
+    <!-- This is my first project thats why code structure is not good -->
 
+    <!-- User Info Pop Up Modal Box -->
+    <div class="user_info">
+        <div class="informations" name='info'>
+            <button id="cancel" name='info'>
+                <i class="far fa-times-circle"></i>
+            </button>
+            <p class="P_fullName" name='info'></p>
+            <p class="P_gender" name='info'></p>
+            <p class="P_email" name='info'></p>
+            <p class="P_phone" name='info'></p>
+            <p class="P_division" name='info'></p>
+            <p class="P_password" name='info'></p>
+        </div>
+    </div>
+
+    <!-- Rules/Conditions and Its Button -->
     <div class="menuBar">
         <button id="rulesButton" class="rulesButton">
-            <img src="rules_icon.png" alt="Rules"><i class="fas fa-chevron-up"></i>
+            <img src="images_icons/rules_icon.png" alt="Rules"><i class="fas fa-chevron-up"></i>
         </button>
 
         <div id="rulesAll" class="rules hidden">
@@ -51,8 +70,9 @@
         </div>
 
     </div>
-    <div>
-        <!-- Main form -->
+
+    <!-- Main form -->
+    <div class="main_form">
         <form id="form" action="">
             <div class="form-control">
                 <label for="fullName">
@@ -137,24 +157,6 @@
             </div>
 
         </form>
-
-        <!-- 
-        <div class="sub_container_2 informations">
-            <h2>Your informations will preview here</h2>
-            <div class="personal_info">
-                <h3 class="P_title"></h3>
-                <p class="P_fixed"></p>
-                <p class="P_fullName"></p>
-                <p class="P_gender"></p>
-                <p class="P_email"></p>
-                <p class="P_phone"></p>
-                <p class="P_division"></p>
-                <p class="P_password"></p>
-            </div>
-
-        </div>
-        -->
-
     </div>
 
 </body>
