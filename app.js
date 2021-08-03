@@ -1,6 +1,5 @@
 /*
 This is my first project, thats why code structure is not good.
-Comment will add later.
 */
 
 let fullName = document.getElementById("fullName");
@@ -142,6 +141,9 @@ agree.addEventListener("change", function (event) {
     }
 });
 
+/*After clicking on Submit Button verify all input, if any error found this will show.
+If all correct it will Show User Info in a pop up modal & Reduce background color brightness of whole form.*/
+let informationSection = document.querySelector(".informations");
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -156,6 +158,7 @@ form.addEventListener("submit", function (e) {
                 passwordConfirmOk &&
                 agreeOk) == true
         ) {
+            //Users info will store in this object
             let previewForm = {
                 fullName: fullName.value,
                 gender: userGender,
@@ -167,47 +170,33 @@ form.addEventListener("submit", function (e) {
             };
             console.log(previewForm);
 
-            //To preview the informations
-            let sub_container_2 = document.querySelector(".informations");
-            sub_container_2.classList.add("allOk");
+            //Added allOk class to show the section
+            informationSection.classList.add("allOk");
 
-            Object.assign(document.querySelector("form#form").style, {
-                float: "left",
-            });
+            //When user info pop up modal appear the background color of form will change
+            backgroundColorChange("change");
 
-            sub_container_2.querySelector(
-                ".P_title"
-            ).innerHTML = `Hi ${fullName.value},`;
-
-            sub_container_2.querySelector(
-                ".P_fixed"
-            ).innerHTML = `Your registration has been completed successfully.`;
-
-            sub_container_2.querySelector(
+            //User info pushed in the html element
+            informationSection.querySelector(
                 ".P_fullName"
             ).innerHTML = `Full Name    : ${fullName.value}`;
-
-            sub_container_2.querySelector(
+            informationSection.querySelector(
                 ".P_gender"
             ).innerHTML = `Gender       : ${userGender}`;
-
-            sub_container_2.querySelector(
+            informationSection.querySelector(
                 ".P_email"
             ).innerHTML = `Email        : ${email.value}`;
-
-            sub_container_2.querySelector(
+            informationSection.querySelector(
                 ".P_phone"
             ).innerHTML = `Phone Number : ${phone.value}`;
-
-            sub_container_2.querySelector(
+            informationSection.querySelector(
                 ".P_division"
             ).innerHTML = `Division     : ${division.value}`;
-
-            sub_container_2.querySelector(
+            informationSection.querySelector(
                 ".P_password"
             ).innerHTML = `Password     : ${password.value}`;
         } else {
-            //if user click on submit button without typing or selecting anything on the filed
+            //if user click on submit button without typing or selecting anything on the filed, this will show error
             let arr = [
                 fullNameOk,
                 genderOk,
@@ -219,6 +208,7 @@ form.addEventListener("submit", function (e) {
                 passwordConfirmOk,
                 agreeOk,
             ];
+
             arr.forEach((inputs, ind) => {
                 if (!inputs) {
                     let errorText = {
@@ -230,6 +220,7 @@ form.addEventListener("submit", function (e) {
                         password: "Password required",
                         agree: "You have to agree with our terms and conditions",
                     };
+
                     let allInput = document.querySelectorAll("input,select");
                     let parent = allInput[ind].parentElement;
                     parent.classList.add("wrong");
@@ -249,7 +240,57 @@ form.addEventListener("submit", function (e) {
     }
 });
 
-////////////////////////////
+// This is for Rules Show and Hide
+rulesButton.addEventListener("click", function () {
+    let arrowIcon = document.querySelector("#rulesButton i.fas");
+    let rules = document.querySelector(".rules");
+
+    if (document.querySelector(".visible") == null) {
+        //This will show the rules
+        rules.classList.remove("hidden");
+        rules.classList.add("visible");
+
+        arrowIcon.classList.add("reverse");
+    } else {
+        //This will hide the rules
+        rules.classList.remove("visible");
+        rules.classList.add("hidden");
+
+        arrowIcon.classList.remove("reverse");
+    }
+});
+
+// Removes the User Information Pop Up modal
+let cancelButton = document.querySelector("button#cancel i");
+cancelButton.addEventListener("click", function () {
+    backgroundColorChange("reverse");
+    informationSection.classList.remove("allOk");
+});
+
+//If user Info Pop Up Modal opened and user click outside the Pop Up modal, the pop up modal will close.
+window.addEventListener("click", function (event) {
+    let nameAttribute = null;
+
+    /*event.target.attributes[1].value
+    This will not work everywhere because all content don't have any attributes, so, it will throw error and the function will not work.
+    
+    That's why i used try catch block to handle the error. */
+    try {
+        nameAttribute = event.target.attributes[1].value;
+    } catch (error) {
+        nameAttribute = null;
+    }
+    /*document.querySelector(".allOk") != null 
+    will check the appearence of user info pop up Modal, if that is not available it will remain null.
+
+    if user info pop up Modal available it will not null.*/
+    if (document.querySelector(".allOk") != null && nameAttribute != "info") {
+        backgroundColorChange("reverse");
+        informationSection.classList.remove("allOk");
+    }
+});
+
+//Below functions are Validation Function
 //this will validate the fullName
 function nameValidation(min, max, input) {
     let finalName = input.value.replace(/\s+/g, " ").replace(/^\s|\s$/g, "");
@@ -324,6 +365,7 @@ function phoneValidation(max, input) {
         phoneOk = true;
     }
 }
+//Validation Function End
 
 //If any field remain unselected this will show error
 function nothingSelectError(input, message) {
@@ -333,7 +375,7 @@ function nothingSelectError(input, message) {
     small.innerHTML = `${input_Title} required`;
 }
 
-//this will clear previously decleared errors
+//this will clear previously showed errors
 function errorRemove(input) {
     let small = smallTag(input);
 
@@ -342,6 +384,7 @@ function errorRemove(input) {
     parent.classList.add("valid");
     small.innerHTML = "";
 }
+
 //this is small tag selector
 function smallTag(input) {
     let parent = input.parentElement;
@@ -351,26 +394,19 @@ function smallTag(input) {
     return parent.getElementsByTagName("small")[0];
 }
 
-// Uncomment this after coding
-let toggle = 0;
-let rules = document.querySelector(".rules");
-let arrowIcon = document.querySelector("#rulesButton i.fas");
+//When user info pop up Modal will appear, this will change the form and other content background color
+function backgroundColorChange(condition) {
+    let rulesSection = document.querySelector(".rules");
+    let rulesButton0 = document.querySelector("#rulesButton");
+    let form0 = document.querySelector("form");
 
-rulesButton.addEventListener("click", function () {
-    toggle++;
-    if (toggle % 2 != 0) {
-        //This will show the rules
-        rules.classList.remove("hidden");
-        rules.classList.add("visible");
-
-        arrowIcon.classList.add("reverse");
-    } else if (toggle % 2 == 0) {
-        //This will hide the rules
-        rules.classList.remove("visible");
-        rules.classList.add("hidden");
-
-        arrowIcon.classList.remove("reverse");
+    if (condition == "change") {
+        rulesSection.classList.add("colorChange");
+        rulesButton0.classList.add("colorChange");
+        form0.classList.add("colorChange");
+    } else if (condition == "reverse") {
+        rulesSection.classList.remove("colorChange");
+        rulesButton0.classList.remove("colorChange");
+        form0.classList.remove("colorChange");
     }
-});
-
-window.addEventListener("click", function (event) {});
+}
