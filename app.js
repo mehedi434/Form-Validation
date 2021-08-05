@@ -399,14 +399,18 @@ function backgroundColorChange(condition) {
     let rulesSection = document.querySelector(".rules");
     let rulesButton0 = document.querySelector("#rulesButton");
     let form0 = document.querySelector("form");
+    let body0 = document.querySelector("body");
+
 
     if (condition == "change") {
         rulesSection.classList.add("colorChange");
         rulesButton0.classList.add("colorChange");
         form0.classList.add("colorChange");
+        body0.classList.add("colorChange");
     } else if (condition == "reverse") {
         rulesSection.classList.remove("colorChange");
         rulesButton0.classList.remove("colorChange");
         form0.classList.remove("colorChange");
+        body0.classList.remove("colorChange");
     }
 }
