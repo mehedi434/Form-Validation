@@ -10,4 +10,4 @@ This is a realtime form validation script.
 ### Site
 [Form Validation Site](https://mehedi434.github.io/Form-Validation/)
 
-#### This is my first project.
+#### This is my first project. As it was my first project, thats why there are some bugs, errors. Will be fixed soon.
